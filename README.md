@@ -7,6 +7,11 @@ The code is for the task of gait recognition (or person identification) on the [
 
 This work is to support a project of my friend.
 
+## Require
+* Numpy
+* Pytorch
+* Torchvision
+
 ## Usage
 ```
 python main.py --task training --epoch 30 --scale 0.25 --angle 90 --batch 12
@@ -20,11 +25,11 @@ python main.py --task training --epoch 30 --scale 0.25 --angle 90 --batch 12
 ## Notice
 * Path to the dataset can be assigned in the file [main.py](./main.py).
 * This code applies for a single angle, i.e. it considers only a camera angle in both training and evaluation stages. Experiments on different angles are independent.
-* The training can be resumed by specify the epoch range. For example, using ```--epoch 10-20``` to load the model at the 10th epoch and continue to train until the 20th epoch.
+* The training can be resumed by specifying the epoch range. For example, use ```--epoch 10-20``` to load the model at the 10th epoch and continue to train until the 20th epoch.
 * If the task is "training", using ```--epoch 10``` means ```--epoch 0-10```.
 
 ## Example
-Training a model with GEIs of size `32 * 22` (original size in MVLP gait dataset is `128 * 88`) corresponding to the camera angle 90 degrees for 30 epochs and batch size 12:
+Training a model with GEIs of size `32 * 22` (original size in MVLP gait dataset is `128 * 88`) corresponding to the camera angle of 90 degrees for 30 epochs and batch size 12:
 ```
 python main.py --task training --epoch 30 --scale 0.25 --angle 90 --batch 12
 ```
